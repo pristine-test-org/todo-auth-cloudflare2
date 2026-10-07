@@ -23,12 +23,27 @@ export default function SignIn({ configError }: { configError: string | null }) 
   }
 
   return (
-    <main className="page">
-      <header className="masthead">
+    <main className="page gate">
+      <header className="gate-top">
+        <p className="kicker">Private list</p>
         <h1 className="wordmark">Tally Private 2</h1>
+        <p className="lede">Your own short list. Sign in to see it.</p>
       </header>
 
-      <p className="lede">Your own short list. Sign in to see it.</p>
+      <ul className="gate-notes">
+        <li>
+          <strong>One list</strong>
+          <span>Only the rows that belong to this account.</span>
+        </li>
+        <li>
+          <strong>Email and password</strong>
+          <span>Nothing else gets you in.</span>
+        </li>
+        <li>
+          <strong>No sign-up</strong>
+          <span>The list's owner sets up each account.</span>
+        </li>
+      </ul>
 
       {error && (
         <div className="notice" role="alert" data-state="error">
@@ -37,6 +52,10 @@ export default function SignIn({ configError }: { configError: string | null }) 
       )}
 
       <form className="signin" onSubmit={signIn}>
+        <div className="signin-head">
+          <h2>Sign in</h2>
+          <p>Use the email and password you were given.</p>
+        </div>
         <label className="field">
           <span>Email</span>
           <input
@@ -61,12 +80,10 @@ export default function SignIn({ configError }: { configError: string | null }) 
             disabled={!supabase}
           />
         </label>
-        <button type="submit" className="primary" disabled={!supabase || signingIn || !email.trim() || !password}>
+        <button type="submit" className="primary signin-submit" disabled={!supabase || signingIn || !email.trim() || !password}>
           {signingIn ? "Signing in…" : "Sign in"}
         </button>
       </form>
-
-      <p className="fineprint">Accounts are set up by the list's owner; there is no sign-up.</p>
     </main>
   );
 }
