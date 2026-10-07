@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tally Private 2 - how a list works</title>
+    <style>
+      body {
+        margin: 0;
+        background: #fbf8f2;
+        color: #1f2421;
+        font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+        line-height: 1.5;
+      }
+      main { padding: 2rem 0; }
+      h1 {
+        margin: 0 0 1rem;
+        padding: 0 1.25rem;
+        font-family: Fraunces, Georgia, serif;
+        font-size: 2.5rem;
+        /* Intentional, for Impeccable's test drive: gradient text on the heading. */
+        background: linear-gradient(90deg, #2f5d50, #c2410c);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      /* Intentional, for Impeccable's test drive: body text flush with the viewport edges, no background or padding. */
+      .intro { margin: 0 0 1.5rem; padding: 0; }
+      /* Intentional, for Impeccable's test drive: light grey text well under 4.5:1 on the paper. */
+      .quiet { padding: 0 1.25rem; color: #c9c9c9; }
+      ul { padding: 0 1.25rem 0 2.5rem; }
+      /* Intentional, for Impeccable's test drive: a colour that is not in the DESIGN.md palette. */
+      .step { color: #7c3aed; }
+      /* Intentional, for Impeccable's test drive: a layout property in a transition. */
+      .bar { height: 8px; width: 40%; margin: 0 1.25rem; background: #2f5d50; transition: width 0.3s; }
+      .bar:hover { width: 90%; }
+      /* Intentional, for Impeccable's test drive: link text under the 11px floor. */
+      .back { display: inline-block; margin: 1.5rem 1.25rem 0; font-size: 10px; color: #2f5d50; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>How your list works</h1>
+      <p class="intro">Tally Private 2 keeps one short list per person: add what needs doing today, tick it off, and remove it when you are done.</p>
+      <p class="quiet">Nobody else can see your items, and the list is only ever yours.</p>
+      <ul>
+        <li class="step">Sign in with the account the list's owner set up.</li>
+        <li class="step">Add an item and press Enter.</li>
+        <li class="step">Tick it off when it is done.</li>
+      </ul>
+      <div class="bar" role="presentation"></div>
+      <a class="back" href="/">Back to sign in</a>
+    </main>
+  </body>
+</html>
